@@ -13,19 +13,13 @@ import registerServiceWorker from './registerServiceWorker';
 // Import your reducers and routes here
 import Welcome from './Welcome';
 import greetingRoutes from './routes/greeting';
-import rootReducer from './reducers/greeting'
+import greeting from './reducers/greeting/';
 
-/*const store = createStore(
-  combineReducers({routing, form, rootReducer}),
-  applyMiddleware(thunk),
-);*/
 
 const store = createStore(
-  combineReducers({routing, form, rootReducer }),
+  combineReducers({routing, form, greeting}),
   applyMiddleware(thunk),
 );
-
-
 
 const history = syncHistoryWithStore(createBrowserHistory(), store);
 
